@@ -1,0 +1,14 @@
+#SUM=`echo $@`
+PWD=`pwd`
+
+[ ! -d ./node_modules ] && npm install
+
+#[ -x "$(which md5)" ] && SUM="$(which md5) -r"
+#[ -x "$(which md5sum)" ] && SUM="$(which md5sum)"
+#
+#sum1=`$SUM data/geoip-city-names.dat | awk '{ print $1 }'`
+#sum2=`$SUM node_modules/geoip-lite/data/geoip-city-names.dat | awk '{ print $1 }'`
+#[ "$sum1" != "$sum2" ] && cp data/* node_modules/geoip-lite/data/ && echo "pre-loading geo-data"
+
+
+forever start $PWD/app.js

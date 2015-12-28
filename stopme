@@ -1,0 +1,7 @@
+PWD=`pwd`
+PS='/bin/ps -ef'
+BUSYBOX=`$PS | grep BusyBox`
+[ -z "$BUSYBOX" ] && PS='/bin/ps'
+
+echo "stopping all apps at $PWD"
+$PS | grep $PWD | grep node | grep -v grep | awk '{ print $1 }' | xargs kill -9
