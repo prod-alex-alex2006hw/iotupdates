@@ -14,7 +14,7 @@ function getGeoData() {
         deviceClient.setMaxListeners(deviceClient.getMaxListeners() + 1);
         if(deviceClient.isConnected) {
             var myQosLevel=0;
-            var myGeo={ 'lat': geo.lat, 'log' : geo.lng};
+            var myGeo={ 'lat': geo.lat, 'long' : geo.lng};
             deviceClient.publish("telemetry", "json", JSON.stringify(myGeo), myQosLevel);
 //            deviceClient.publish("status", "json", JSON.stringify(geo.time), myQosLevel);
         }
