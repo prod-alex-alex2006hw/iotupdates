@@ -1,6 +1,8 @@
 #SUM=`echo $@`
 PWD=`pwd`
 
+[ -f ~/.profile ] && . ~/.profile
+
 [ ! -d ./node_modules ] && npm install
 
 #[ -x "$(which md5)" ] && SUM="$(which md5) -r"
